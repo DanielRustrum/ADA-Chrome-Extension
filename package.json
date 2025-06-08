@@ -1,0 +1,18 @@
+{
+  "name": "ada-contrast-chrome-extension",
+  "version": "1.0.0",
+  "description": "A Chrome Extension for detecting contrast issues using OCR",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.33",
+    "@types/chrome": "^0.0.323",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "ocr-tesseractjs-selfcontained": "^0.0.3"
+  }
+}
