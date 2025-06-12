@@ -1,25 +1,26 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm install
-      - run: npm run build:web
-      - run: |
-          cd dist/web
-          git init
-          git config user.name 'github-actions'
-          git config user.email 'actions@github.com'
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git add .
-          git commit -m 'deploy'
-          git push --force origin HEAD:gh-pages
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - run: npm install
+            - run: npm run build:web
+            - name: Push to gh-pages
+              run: |
+                  cd dist/web
+                  git init
+                  git config user.name 'github-actions'
+                  git config user.email 'actions@github.com'
+                  git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+                  git add .
+                  git commit -m 'deploy'
+                  git push --force origin HEAD:gh-pages
