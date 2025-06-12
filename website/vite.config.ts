@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 
 // Replace this with your GitHub repo name if deploying to user.github.io/repo-name
-const repoName = 'GameJam' // <-- customize this
+const repoName = 'ADA-Contrast-Checker' 
 
 export default defineConfig({
   plugins: [react()],
