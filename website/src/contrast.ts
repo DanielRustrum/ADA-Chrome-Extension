@@ -21,3 +21,5 @@ function passesContrast(fg, bg, isLargeText) {
     const ratio = contrastRatio(fg, bg);
     return ratio >= (isLargeText ? 3.0 : 4.5);
 }
+
+

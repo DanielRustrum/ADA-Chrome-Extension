@@ -1,18 +1,20 @@
-import { defineConfig } from 'vite';
-import { crx } from '@crxjs/vite-plugin';
-import manifest from './manifest.json';
+import { defineConfig } from 'vite'
+import { crx } from '@crxjs/vite-plugin'
+import manifest from './manifest.json'
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [crx({ manifest })],
   build: {
-    outDir: 'dist',
     rollupOptions: {
       input: {
-        popup: 'src/popup.html',
-        background: 'src/background.ts',
-        content: 'src/content.ts'
+        popup: resolve(__dirname, 'src/popup.html'),
+        analyze: resolve(__dirname, 'src/analyze.html'),
       }
-    }
+    },
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: false
   },
   server: {
     watch: {
@@ -20,4 +22,4 @@ export default defineConfig({
     },
     hmr: false
   }
-});
+})

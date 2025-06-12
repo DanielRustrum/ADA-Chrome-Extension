@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "A Chrome Extension for detecting contrast issues using OCR",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "build:extension": "vite build --config extension/vite.config.ts",
+    "build:web": "vite build --config web/vite.config.ts",
+    "build": "npm run build:extension && npm run build:web",
+    "dev:extension": "vite --config extension/vite.config.ts",
+    "dev:web": "vite --config web/vite.config.ts"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.33",
@@ -13,6 +16,8 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@vitejs/plugin-react-swc": "^3.10.2",
     "ocr-tesseractjs-selfcontained": "^0.0.3"
-  }
+  },
+  "homepage": "https://daniel.rustrum.net/ADA-Contrast-Checker"
 }
