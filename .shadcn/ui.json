@@ -1,0 +1,16 @@
+{
+  "name": "my-app",
+  "cwd": ".",
+  "paths": {
+    "components": "src/components/ui",
+    "utils": "src/lib/utils.ts",
+    "types": "src/types",
+    "tailwindConfig": "tailwind.config.ts",
+    "tsconfig": "tsconfig.json"
+  },
+  "aliases": {
+    "@/components": "src/components",
+    "@/lib": "src/lib",
+    "@/": "src"
+  }
+}

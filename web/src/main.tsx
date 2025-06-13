@@ -1,18 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.scss'
-
-
-
-
-const Global = () => {
-  return (
-    <div>hello Github!</div>
-  )
-}
+import './index.css'
+import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Global />
+    <App />
   </StrictMode>,
 )
